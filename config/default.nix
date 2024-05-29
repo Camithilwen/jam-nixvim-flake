@@ -85,7 +85,7 @@
       lldb_17
       llvmPackages_17.bintools-unwrapped
       marksman
-      jupynium
+      jupytext
 
     (nerdfonts.override {
       fonts = [
