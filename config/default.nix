@@ -43,6 +43,8 @@
       undotree.enable = true;
       fugitive.enable = true;
       nvim-tree.enable = true;
+     # python.enable = true;
+      jupytext.enable = true;
     };
     extraPackages = with pkgs; [
       # Formatters
@@ -85,7 +87,6 @@
       lldb_17
       llvmPackages_17.bintools-unwrapped
       marksman
-      jupytext
 
     (nerdfonts.override {
       fonts = [
