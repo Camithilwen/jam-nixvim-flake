@@ -1,19 +1,9 @@
-
 {pkgs, ...}: {
-        plugins = {
-       	 nvim-cmp = {
-                enable = true;
-		};
-	 cmp-buffer.enable = true;
-	 cmp-nvim-lsp.enable = true;
-	 cmp-nvim-lua.enable = true;
-	 cmp-cmdline.enable = true;
-	 cmp-path.enable = true;
-	 luasnip.enable = true;
+	plugins = {
+	nvim-cmp = {
+		enable = true;
 
-	};
-
-extraConfigLua = ''
+lua <<EOF
   -- Set up nvim-cmp.
   local cmp = require'cmp'
 
@@ -37,7 +27,7 @@ extraConfigLua = ''
       ['<C-f>'] = cmp.mapping.scroll_docs(4),
       ['<C-Space>'] = cmp.mapping.complete(),
       ['<C-e>'] = cmp.mapping.abort(),
-      ['<C-y>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item.>
+      ['<C-y>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     }),
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
@@ -49,7 +39,7 @@ extraConfigLua = ''
       { name = 'buffer' },
       { name = 'nvim_lua' },
       { name = 'cmdline' },
-{ name = 'path' },
+      { name = 'path' },
     })
   })
 local cmp = require("cmp")
@@ -67,7 +57,6 @@ local cmp = require("cmp")
         }),
     })
 
-'';
+EOF
+};
 }
-
-

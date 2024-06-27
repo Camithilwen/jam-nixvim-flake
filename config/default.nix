@@ -45,6 +45,7 @@
       nvim-tree.enable = true;
      # python.enable = true;
       jupytext.enable = true;
+      
     };
     extraPackages = with pkgs; [
       # Formatters
